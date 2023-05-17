@@ -1,5 +1,8 @@
+
+
 import 'package:flutter/material.dart';
 
+import '../Model/HomePageModel.dart';
 import '../pages/details_page.dart';
 import '../pages/get_started_page.dart';
 import '../pages/home_page.dart';
@@ -15,7 +18,7 @@ class AppRouteName{
 
     switch(settings.name){
       case AppRouteName.getStarted:
-        return MaterialPageRoute(builder: (_)=>const GetStarted(),
+        return MaterialPageRoute(builder: (_)=>const HomePage(),
             settings: settings
         );
 
@@ -23,7 +26,7 @@ class AppRouteName{
         return PageRouteBuilder(
 
             settings: settings,
-            pageBuilder: (_,__,___)=>const HomePage(),
+            pageBuilder: (_,__,___)=>const GetStarted(),
             transitionDuration: const Duration(milliseconds: 300),
             transitionsBuilder: (_, animation, ___, child){
 
@@ -47,7 +50,7 @@ class AppRouteName{
         return PageRouteBuilder(
 
             settings: settings,
-            pageBuilder: (_,__,___)=>const Details(),
+            pageBuilder: (_,__,___)=> Details(),
             transitionDuration: const Duration(milliseconds: 300),
             transitionsBuilder: (_, animation, ___, child){
 
